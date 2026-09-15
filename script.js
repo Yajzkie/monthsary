@@ -65,9 +65,17 @@ const PHOTOS = [
   "photo-25.jpeg",
 ];
 
+// Captions cycle across the wall. Swap any caption text here.
+const CAPTIONS = [
+  "motor rides with you",
+  "night walks on the dike",
+  "making fun of each other",
+  "babe",
+];
+
 const gallery = document.getElementById("gallery");
 gallery.append(
-  ...PHOTOS.map((src) => {
+  ...PHOTOS.map((src, i) => {
     const fig = document.createElement("figure");
     fig.className = "tile reveal";
     fig.innerHTML = `
@@ -76,7 +84,7 @@ gallery.append(
              onerror="this.closest('.frame').classList.add('empty')">
         <div class="empty-state" aria-hidden="true">♥ photo missing</div>
       </div>
-      <figcaption>(caption me)</figcaption>`;
+      <figcaption>${CAPTIONS[i % CAPTIONS.length]}</figcaption>`;
     return fig;
   })
 );
