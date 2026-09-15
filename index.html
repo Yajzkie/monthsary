@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Counting every month of us." />
+  <meta property="og:title" content="Months of Us" />
+  <meta property="og:description" content="A little page counting every month together." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+  <main id="main">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+
+      <p class="hero-eyebrow reveal">hey you, look what i made</p>
+      <p class="hero-title" id="hero-title">
+        <span class="counter" id="monthsCount">0</span>
+        <span class="counter-word">months of us</span>
+      </p>
+      <p class="hero-since reveal" id="sinceLine">since 16 January 2022</p>
+
+      <a class="btn reveal" href="#photos">scroll for the good stuff <span class="btn-arrow">↓</span></a>
+    </section>
+
+    <section class="stats reveal" aria-label="time together">
+      <div class="stat">
+        <span class="stat-num" id="daysSince" data-count-total>0</span>
+        <span class="stat-label">days together</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="monthsSince">0</span>
+        <span class="stat-label">months and counting</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" id="weeksSince">0</span>
+        <span class="stat-label">weeks of us</span>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="photos" aria-labelledby="gallery-title">
+      <h2 class="section-title reveal" id="gallery-title">proof we smile</h2>
+      <p class="section-sub reveal">drop up to six photos into <code>photos/</code> — name them <code>photo-1.jpg</code> … <code>photo-6.jpg</code></p>
+
+      <div class="gallery">
+        <figure class="tile reveal">
+          <div class="frame">
+            <img src="photos/photo-1.jpg" alt="" loading="lazy" onerror="this.closest('.frame').classList.add('empty')">
+            <div class="empty-state" aria-hidden="true">♥ your photo here</div>
+          </div>
+          <figcaption>(caption me)</figcaption>
+        </figure>
+        <figure class="tile reveal">
+          <div class="frame">
+            <img src="photos/photo-2.jpg" alt="" loading="lazy" onerror="this.closest('.frame').classList.add('empty')">
+            <div class="empty-state" aria-hidden="true">♥ your photo here</div>
+          </div>
+          <figcaption>(caption me)</figcaption>
+        </figure>
+        <figure class="tile reveal">
+          <div class="frame">
+            <img src="photos/photo-3.jpg" alt="" loading="lazy" onerror="this.closest('.frame').classList.add('empty')">
+            <div class="empty-state" aria-hidden="true">♥ your photo here</div>
+          </div>
+          <figcaption>(caption me)</figcaption>
+        </figure>
+        <figure class="tile reveal">
+          <div class="frame">
+            <img src="photos/photo-4.jpg" alt="" loading="lazy" onerror="this.closest('.frame').classList.add('empty')">
+            <div class="empty-state" aria-hidden="true">♥ your photo here</div>
+          </div>
+          <figcaption>(caption me)</figcaption>
+        </figure>
+        <figure class="tile reveal">
+          <div class="frame">
+            <img src="photos/photo-5.jpg" alt="" loading="lazy" onerror="this.closest('.frame').classList.add('empty')">
+            <div class="empty-state" aria-hidden="true">♥ your photo here</div>
+          </div>
+          <figcaption>(caption me)</figcaption>
+        </figure>
+        <figure class="tile reveal">
+          <div class="frame">
+            <img src="photos/photo-6.jpg" alt="" loading="lazy" onerror="this.closest('.frame').classList.add('empty')">
+            <div class="empty-state" aria-hidden="true">♥ your photo here</div>
+          </div>
+          <figcaption>(caption me)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="notes-section" aria-labelledby="notes-title">
+      <h2 class="section-title reveal" id="notes-title">all that time means</h2>
+
+      <div class="notes">
+        <div class="note reveal cc-1"><span class="note-ico" aria-hidden="true">☕</span><span>coffee cups you've "borrowed" from me</span></div>
+        <div class="note reveal cc-2"><span class="note-ico" aria-hidden="true">😄</span><span>inside jokes only the two of us get</span></div>
+        <div class="note reveal cc-3"><span class="note-ico" aria-hidden="true">🎧</span><span>a shared playlist that never stops growing</span></div>
+        <div class="note reveal cc-4"><span class="note-ico" aria-hidden="true">📱</span><span>good morning texts that still make me smile</span></div>
+        <div class="note reveal cc-5"><span class="note-ico" aria-hidden="true">💬</span><span>late-night talks about absolutely nothing</span></div>
+        <div class="note reveal cc-6"><span class="note-ico" aria-hidden="true">💛</span><span>two people still choosing each other every day</span></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>made with <span class="heart" aria-hidden="true">♥</span> + a little code, for us</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
