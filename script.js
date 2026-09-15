@@ -2,6 +2,10 @@
 // Change the start date (year, monthIndex 0-11, day) once, and every number updates itself.
 const START = new Date(2022, 0, 16);
 
+// ponytail: manual nudge — shows 56 a day early (monthsary is the 16th).
+// Remove when you want it to roll over naturally.
+const MONTHS_OFFSET = 1;
+
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // ========== TIME MATH ==========
@@ -12,6 +16,7 @@ let months =
   (now.getFullYear() - START.getFullYear()) * 12 +
   (now.getMonth() - START.getMonth());
 if (now.getDate() < START.getDate()) months--;
+months += MONTHS_OFFSET;
 
 const sinceLine = document.getElementById("sinceLine");
 sinceLine.textContent =
