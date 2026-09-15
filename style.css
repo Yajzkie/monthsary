@@ -260,6 +260,40 @@ code {
 .cc-5 { border-left: 6px solid var(--sky); }
 .cc-6 { border-left: 6px solid var(--lilac); }
 
+/* ========== LETTER ========== */
+.letter-section {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.letter {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  border: 2px solid rgba(43, 37, 71, 0.07);
+  box-shadow: 0 18px 40px -18px rgba(43, 37, 71, 0.25);
+  padding: 2.75rem 2.5rem;
+  position: relative;
+  font-family: "Caveat", var(--body);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  transform: rotate(-0.6deg);
+}
+.letter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(90deg, var(--coral), var(--tangerine), var(--sun), var(--mint), var(--sky), var(--lilac));
+}
+.letter p { margin-bottom: 1.1rem; }
+.letter .letter-salutation { font-size: 1.7rem; font-weight: 600; }
+.letter .letter-signoff { margin-bottom: 0.35rem; }
+.letter .letter-signature { color: var(--coral); font-weight: 600; font-size: 1.7rem; }
+
 /* ========== FOOTER ========== */
 .footer {
   text-align: center;
@@ -315,6 +349,9 @@ code {
   .notes-section { padding: 3rem 1rem; }
   .notes { grid-template-columns: 1fr; gap: 0.75rem; }
   .note { padding: 1.25rem 1rem; border-radius: 16px; font-size: 0.95rem; }
+
+  .letter-section { padding: 3rem 1rem; }
+  .letter { padding: 1.75rem 1.25rem; font-size: 1.25rem; transform: none; }
 
   .footer { padding: 2.5rem 1rem 2rem; }
 }
