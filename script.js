@@ -67,10 +67,10 @@ const PHOTOS = [
 
 // Captions cycle across the wall. Swap any caption text here.
 const CAPTIONS = [
-  "motor rides with you",
-  "night walks on the dike",
-  "making fun of each other",
-  "babe",
+  "motor rides with you are my favorite kind of adventure",
+  "night walks on the dike just to talk about everything and nothing",
+  "making fun of each other is how we say i love you",
+  "babe, you make everyday feel special",
 ];
 
 const gallery = document.getElementById("gallery");
