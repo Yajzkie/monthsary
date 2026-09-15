@@ -89,6 +89,34 @@ gallery.append(
   })
 );
 
+// ========== MUSIC ==========
+const VIDEO_ID = "ApXoWvfEYVU";
+const musicBtn = document.getElementById("musicBtn");
+const musicPanel = document.getElementById("musicPanel");
+const musicFrame = document.getElementById("musicFrame");
+const musicIcon = document.getElementById("musicIcon");
+
+musicBtn.addEventListener("click", () => {
+  if (musicBtn.getAttribute("aria-expanded") === "true") {
+    musicFrame.replaceChildren();
+    musicPanel.hidden = true;
+    musicBtn.setAttribute("aria-expanded", "false");
+    musicBtn.setAttribute("aria-label", "Play Sunflower by Post Malone & Swae Lee");
+    musicIcon.textContent = "♪";
+    return;
+  }
+  const iframe = document.createElement("iframe");
+  iframe.src =
+    `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&loop=1&playlist=${VIDEO_ID}&autoplay=1`;
+  iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+  iframe.title = "Sunflower by Post Malone & Swae Lee";
+  musicFrame.appendChild(iframe);
+  musicPanel.hidden = false;
+  musicBtn.setAttribute("aria-expanded", "true");
+  musicBtn.setAttribute("aria-label", "Close music player");
+  musicIcon.textContent = "✕";
+});
+
 // ========== REVEAL ==========
 const reveals = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver(

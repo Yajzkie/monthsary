@@ -356,6 +356,53 @@ code {
   .footer { padding: 2.5rem 1rem 2rem; }
 }
 
+/* ========== MUSIC ========== */
+.music {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+.music-btn {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--lilac));
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 12px 28px -8px rgba(43, 37, 71, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--display);
+}
+.music-btn:hover { transform: translateY(-3px) rotate(-6deg); }
+.music-btn:active { transform: scale(0.94); }
+.music-panel {
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid rgba(43, 37, 71, 0.07);
+  box-shadow: 0 20px 44px -16px rgba(43, 37, 71, 0.35);
+  padding: 0.75rem;
+  width: min(360px, 88vw);
+}
+.music-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0.25rem 0.5rem 0.6rem;
+}
+.music-frame { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; }
+.music-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+
 /* ========== FOCUS ========== */
 a:focus-visible,
 button:focus-visible {
