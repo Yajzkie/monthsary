@@ -53,6 +53,34 @@ function confetti() {
 }
 if (!reducedMotion) window.setTimeout(confetti, 250);
 
+// ========== PHOTO WALL ==========
+// Add or remove filenames here; tiles are built from this list.
+const PHOTOS = [
+  "photo-01.jpeg", "photo-02.jpeg", "photo-03.jpeg", "photo-04.jpeg",
+  "photo-05.jpeg", "photo-06.jpeg", "photo-07.jpeg", "photo-08.jpeg",
+  "photo-09.jpeg", "photo-10.jpeg", "photo-11.jpeg", "photo-12.jpeg",
+  "photo-13.jpeg", "photo-14.jpeg", "photo-15.jpeg", "photo-16.jpeg",
+  "photo-17.jpeg", "photo-18.jpeg", "photo-19.jpeg", "photo-20.jpeg",
+  "photo-21.jpeg", "photo-22.jpeg", "photo-23.jpeg", "photo-24.jpeg",
+  "photo-25.jpeg",
+];
+
+const gallery = document.getElementById("gallery");
+gallery.append(
+  ...PHOTOS.map((src) => {
+    const fig = document.createElement("figure");
+    fig.className = "tile reveal";
+    fig.innerHTML = `
+      <div class="frame">
+        <img src="photos/${src}" alt="" loading="lazy"
+             onerror="this.closest('.frame').classList.add('empty')">
+        <div class="empty-state" aria-hidden="true">♥ photo missing</div>
+      </div>
+      <figcaption>(caption me)</figcaption>`;
+    return fig;
+  })
+);
+
 // ========== REVEAL ==========
 const reveals = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver(
