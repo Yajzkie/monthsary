@@ -186,7 +186,7 @@ code {
 .tile {
   background: #fff;
   border-radius: var(--radius);
-  padding: 0.85rem 0.85rem 1rem;
+  padding: 0.85rem;
   box-shadow: 0 14px 30px -14px rgba(43, 37, 71, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -194,13 +194,6 @@ code {
 .tile:nth-child(3n+2) { transform: rotate(1.4deg); border-top: 6px solid var(--sky); }
 .tile:nth-child(3n+3) { transform: rotate(-1deg); border-top: 6px solid var(--sun); }
 .tile:hover { transform: rotate(0deg) translateY(-5px); box-shadow: 0 22px 40px -16px rgba(43, 37, 71, 0.3); }
-.tile figcaption {
-  font-family: var(--display);
-  font-size: 0.95rem;
-  color: var(--ink-soft);
-  text-align: center;
-  padding-top: 0.75rem;
-}
 .frame {
   position: relative;
   aspect-ratio: 4 / 5;

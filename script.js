@@ -65,17 +65,11 @@ const PHOTOS = [
   "photo-25.jpeg",
 ];
 
-// Captions cycle across the wall. Swap any caption text here.
-const CAPTIONS = [
-  "motor rides with you are my favorite kind of adventure",
-  "night walks on the dike just to talk about everything and nothing",
-  "making fun of each other is how we say i love you",
-  "babe, you make everyday feel special",
-];
+// Captions used to sit here — moved to the notes section; photos are caption-free now.
 
 const gallery = document.getElementById("gallery");
 gallery.append(
-  ...PHOTOS.map((src, i) => {
+  ...PHOTOS.map((src) => {
     const fig = document.createElement("figure");
     fig.className = "tile reveal";
     fig.innerHTML = `
@@ -83,8 +77,7 @@ gallery.append(
         <img src="photos/${src}" alt="" loading="lazy"
              onerror="this.closest('.frame').classList.add('empty')">
         <div class="empty-state" aria-hidden="true">♥ photo missing</div>
-      </div>
-      <figcaption>${CAPTIONS[i % CAPTIONS.length]}</figcaption>`;
+      </div>`;
     return fig;
   })
 );
