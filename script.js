@@ -89,26 +89,40 @@ const musicBg = document.getElementById("musicBg");
 const musicIcon = document.getElementById("musicIcon");
 let musicOn = false;
 
+function startMusic() {
+  musicOn = true;
+  const iframe = document.createElement("iframe");
+  iframe.src =
+    `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&loop=1&playlist=${VIDEO_ID}&autoplay=1`;
+  iframe.allow = "autoplay; encrypted-media; picture-in-picture";
+  iframe.title = "Sunflower by Post Malone & Swae Lee";
+  musicBg.replaceChildren(iframe);
+  musicBtn.classList.add("playing");
+  musicBtn.setAttribute("aria-pressed", "true");
+  musicBtn.setAttribute("aria-label", "Stop background music: Sunflower");
+  musicIcon.textContent = "♥";
+}
+
+function stopMusic() {
+  musicOn = false;
+  musicBg.replaceChildren();
+  musicBtn.classList.remove("playing");
+  musicBtn.setAttribute("aria-pressed", "false");
+  musicBtn.setAttribute("aria-label", "Play background music: Sunflower by Post Malone & Swae Lee");
+  musicIcon.textContent = "♪";
+}
+
+// Autoplay as early as the browser allows: on the first touch/tap/keypress anywhere.
+["pointerdown", "keydown", "touchstart"].forEach((evt) =>
+  window.addEventListener(evt, (e) => {
+    if (musicOn || e.target === musicBtn) return;
+    startMusic();
+  }, { passive: true })
+);
+
 musicBtn.addEventListener("click", () => {
-  musicOn = !musicOn;
-  if (musicOn) {
-    const iframe = document.createElement("iframe");
-    iframe.src =
-      `https://www.youtube-nocookie.com/embed/${VIDEO_ID}?rel=0&loop=1&playlist=${VIDEO_ID}&autoplay=1`;
-    iframe.allow = "autoplay; encrypted-media; picture-in-picture";
-    iframe.title = "Sunflower by Post Malone & Swae Lee";
-    musicBg.appendChild(iframe);
-    musicBtn.classList.add("playing");
-    musicBtn.setAttribute("aria-pressed", "true");
-    musicBtn.setAttribute("aria-label", "Stop background music: Sunflower");
-    musicIcon.textContent = "♥";
-  } else {
-    musicBg.replaceChildren();
-    musicBtn.classList.remove("playing");
-    musicBtn.setAttribute("aria-pressed", "false");
-    musicBtn.setAttribute("aria-label", "Play background music: Sunflower by Post Malone & Swae Lee");
-    musicIcon.textContent = "♪";
-  }
+  if (musicOn) stopMusic();
+  else startMusic();
 });
 
 // ========== REVEAL ==========
